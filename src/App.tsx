@@ -1,7 +1,7 @@
-import { Link2, X, Copy } from 'lucide-react'
+import { Link2, X, Copy, ArrowDownToLine } from 'lucide-react'
 import { useState } from 'react'
 import Header from './Components/Header.tsx'
-
+import Loading from './Components/Loading.tsx'
 function App() {
   const [input_url, setInput_url] = useState('')
   const [result_url, setResultUrl] = useState('')
@@ -85,8 +85,11 @@ function App() {
                   }}
                 />
 
-                <div className="absolute z-32 w-55 aspect-square rounded-[10px] bg-white shadow-[0px_0px_60px_rgba(0,0,0,0.25)] top-10 justify-self-center">
+                <div className="absolute z-32 w-55 p-3 aspect-square rounded-[10px] bg-white shadow-[0px_0px_10px_rgba(0,0,0,0.25)] top-10 justify-self-center">
                   <img className="object-contain rounded-[10px]" src={QR_Code} alt="QR Code" />
+                  <div className="absolute flex justify-center items-center -bottom-4 -right-4 bg-primary-500 w-10 h-10 rounded-full text-white hover:cursor-pointer border-2 hover:border-primary-500">
+                    <ArrowDownToLine onClick={() => {}} />
+                  </div>
                 </div>
                 <div className="mt-20 mx-9">
                   <h1 className="text-center text-[24px] text-primary-500 font-bold">
@@ -117,10 +120,7 @@ function App() {
                 </div>
               </div>
             ) : (
-              <div className="relative w-100 h-117 z-31 bg-white shadow-[0px_0px_50px_rgba(0,0,0,0.25)] rounded-[10px] flex flex-col items-center justify-center ">
-                <p className=" font-sans text-primary-500 text-5xl font-bold">Processing...</p>
-                <img src="/Loading_icon.svg" />
-              </div>
+              <Loading />
             )}
           </div>
         ) : (
