@@ -2,7 +2,7 @@ import { Link2, X, Copy, ArrowDownToLine } from 'lucide-react'
 import Loading from './Loading.tsx'
 import { QRCodeSVG } from 'qrcode.react'
 import { useUrlShortener } from '../Hooks/useUrlShortener.ts'
-import isURL from 'validator/lib/isURL'
+import { isURL } from 'validator'
 import Input from './Input.tsx'
 
 const API_BASE = import.meta.env.API_BASE || 'http://localhost:3000'
