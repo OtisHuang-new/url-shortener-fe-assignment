@@ -4,6 +4,7 @@ on:
   pull-request:
   push:
     - main
+    - feat/khoihoang862006@gmail.com
 
 jobs:
   build-and-deploy:
